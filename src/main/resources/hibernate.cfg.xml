@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "www.hibernate.org">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 1. Базовые настройки -->
+<!--        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> &lt;!&ndash; Диалект для PostgreSQL &ndash;&gt;-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property> <!-- Драйвер PostgreSQL JDBC -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/MyDatabase</property> <!-- URL вашей БД -->
+        <property name="hibernate.connection.username">postgres</property> <!-- Имя пользователя -->
+        <property name="hibernate.connection.password">myforpgdbpar</property> <!-- Пароль -->
+
+        <!-- 2. Опциональные настройки (рекомендуется для разработки) -->
+        <property name="hibernate.show_sql">true</property> <!-- Показывает SQL-запросы в консоли -->
+        <property name="hibernate.format_sql">true</property> <!-- Форматирует SQL-запросы -->
+        <property name="hibernate.hbm2ddl.auto">update</property> <!-- Автоматическое создание/обновление таблиц при запуске. Обновляет схему БД (update, create, create-drop, validate) -->
+
+        <!-- 3. Mapping (подключение классов к таблицам) -->
+        <!-- Добавьте ваши <mapping resource="com/example/model/YourEntity.hbm.xml"/> или <mapping class="com.example.model.YourEntity"/> -->
+        <!-- Пример для аннотированных классов -->
+        <mapping class="HibernateExample/src/main/java/models/User"/>
+
+    </session-factory>
+</hibernate-configuration>

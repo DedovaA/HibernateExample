@@ -1,0 +1,735 @@
+2025-12-20 23:32:13 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-20 23:32:14 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-20 23:32:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:32:14 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-20 23:32:14 [main] ERROR utils.HibernateSessionFactoryUtil - Ошибка создания Hibernate SessionFactory
+
+org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [HibernateExample/src/main/java/models/User]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:88)
+	at org.hibernate.boot.models.internal.ClassLoaderServiceLoading.classForName(ClassLoaderServiceLoading.java:28)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetailsStatic(JdkBuilders.java:68)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:35)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:27)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.createClassDetails(AbstractClassDetailsRegistry.java:209)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.resolveClassDetails(AbstractClassDetailsRegistry.java:204)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.lambda$processManagedResources$2(MetadataBuildingProcess.java:423)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.processManagedResources(MetadataBuildingProcess.java:420)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:174)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:131)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:428)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
+	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:10)
+Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:488)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:85)
+	... 17 common frames omitted
+2025-12-20 23:32:14 [main] ERROR dao.UserDAOImpl - Ошибка получения кол-ва пользователей.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:10)
+2025-12-20 23:32:48 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-20 23:32:48 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-20 23:32:49 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:32:49 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-20 23:32:49 [main] ERROR utils.HibernateSessionFactoryUtil - Ошибка создания Hibernate SessionFactory
+
+org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [HibernateExample/src/main/java/models/User]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:88)
+	at org.hibernate.boot.models.internal.ClassLoaderServiceLoading.classForName(ClassLoaderServiceLoading.java:28)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetailsStatic(JdkBuilders.java:68)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:35)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:27)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.createClassDetails(AbstractClassDetailsRegistry.java:209)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.resolveClassDetails(AbstractClassDetailsRegistry.java:204)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.lambda$processManagedResources$2(MetadataBuildingProcess.java:423)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.processManagedResources(MetadataBuildingProcess.java:420)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:174)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:131)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:428)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
+	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:10)
+Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:488)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:85)
+	... 17 common frames omitted
+2025-12-20 23:32:49 [main] ERROR dao.UserDAOImpl - Ошибка получения кол-ва пользователей.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:10)
+2025-12-20 23:32:49 [main] ERROR dao.UserDAOImpl - Ошибка.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findAll(UserDAOImpl.java:44)
+	at services.UserService.findAllUsers(UserService.java:43)
+	at Main.main(Main.java:11)
+2025-12-20 23:37:03 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-20 23:37:03 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-20 23:37:04 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:37:04 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-20 23:37:04 [main] ERROR utils.HibernateSessionFactoryUtil - Ошибка создания Hibernate SessionFactory
+
+org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [HibernateExample/src/main/java/models/User]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:88)
+	at org.hibernate.boot.models.internal.ClassLoaderServiceLoading.classForName(ClassLoaderServiceLoading.java:28)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetailsStatic(JdkBuilders.java:68)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:35)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:27)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.createClassDetails(AbstractClassDetailsRegistry.java:209)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.resolveClassDetails(AbstractClassDetailsRegistry.java:204)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.lambda$processManagedResources$2(MetadataBuildingProcess.java:423)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.processManagedResources(MetadataBuildingProcess.java:420)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:174)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:131)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:428)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
+	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:8)
+Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:488)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:85)
+	... 17 common frames omitted
+2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка получения кол-ва пользователей.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:8)
+2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findAll(UserDAOImpl.java:44)
+	at services.UserService.getAllUsers(UserService.java:43)
+	at Main.main(Main.java:9)
+2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: masha@mail.ru не найден .
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:31)
+	at services.UserService.saveUser(UserService.java:52)
+	at Main.main(Main.java:15)
+2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.save(UserDAOImpl.java:55)
+	at services.UserService.saveUser(UserService.java:56)
+	at Main.main(Main.java:15)
+2025-12-20 23:37:04 [main] INFO  services.UserService - Пользователь User{id=0, name='Masha', email='masha@mail.ru', age=23} успешно создан.
+
+2025-12-20 23:54:54 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-20 23:54:54 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-20 23:54:54 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:54:54 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-20 23:54:54 [main] ERROR utils.HibernateSessionFactoryUtil - Ошибка создания Hibernate SessionFactory
+
+org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [HibernateExample/src/main/java/models/User]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:88)
+	at org.hibernate.boot.models.internal.ClassLoaderServiceLoading.classForName(ClassLoaderServiceLoading.java:28)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetailsStatic(JdkBuilders.java:68)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:35)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:27)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.createClassDetails(AbstractClassDetailsRegistry.java:209)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.resolveClassDetails(AbstractClassDetailsRegistry.java:204)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.lambda$processManagedResources$2(MetadataBuildingProcess.java:423)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.processManagedResources(MetadataBuildingProcess.java:420)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:174)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:131)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:428)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
+	at dao.UserDAOImpl.count(UserDAOImpl.java:121)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:8)
+Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:488)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:85)
+	... 17 common frames omitted
+2025-12-20 23:54:54 [main] ERROR dao.UserDAOImpl - Ошибка получения кол-ва пользователей.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.count(UserDAOImpl.java:121)
+	at services.UserService.getUsersCount(UserService.java:103)
+	at Main.main(Main.java:8)
+2025-12-20 23:54:54 [main] ERROR dao.UserDAOImpl - Ошибка.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findAll(UserDAOImpl.java:49)
+	at services.UserService.getAllUsers(UserService.java:43)
+	at Main.main(Main.java:9)
+2025-12-20 23:55:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-20 23:55:48 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-20 23:55:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:55:48 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-20 23:55:48 [main] ERROR utils.HibernateSessionFactoryUtil - Ошибка создания Hibernate SessionFactory
+
+org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [HibernateExample/src/main/java/models/User]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:88)
+	at org.hibernate.boot.models.internal.ClassLoaderServiceLoading.classForName(ClassLoaderServiceLoading.java:28)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetailsStatic(JdkBuilders.java:68)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:35)
+	at org.hibernate.models.internal.jdk.JdkBuilders.buildClassDetails(JdkBuilders.java:27)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.createClassDetails(AbstractClassDetailsRegistry.java:209)
+	at org.hibernate.models.internal.AbstractClassDetailsRegistry.resolveClassDetails(AbstractClassDetailsRegistry.java:204)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.lambda$processManagedResources$2(MetadataBuildingProcess.java:423)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.processManagedResources(MetadataBuildingProcess.java:420)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:174)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:131)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:428)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
+	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
+	at services.UserService.saveUser(UserService.java:52)
+	at Main.main(Main.java:15)
+Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:488)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:85)
+	... 17 common frames omitted
+2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: masha@mail.ru не найден .
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
+	at services.UserService.saveUser(UserService.java:52)
+	at Main.main(Main.java:15)
+2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.save(UserDAOImpl.java:62)
+	at services.UserService.saveUser(UserService.java:56)
+	at Main.main(Main.java:15)
+2025-12-20 23:55:48 [main] INFO  services.UserService - Пользователь User{id=0, name='Masha', email='masha@mail.ru', age=23} успешно создан.
+
+2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: igor@mail.ru не найден .
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
+	at services.UserService.saveUser(UserService.java:52)
+	at Main.main(Main.java:16)
+2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.save(UserDAOImpl.java:62)
+	at services.UserService.saveUser(UserService.java:56)
+	at Main.main(Main.java:16)
+2025-12-20 23:55:48 [main] INFO  services.UserService - Пользователь User{id=0, name='Igor', email='igor@mail.ru', age=26} успешно создан.
+
+2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: igor@mail.ru не найден .
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
+	at services.UserService.saveUser(UserService.java:52)
+	at Main.main(Main.java:17)
+2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
+	at dao.UserDAOImpl.save(UserDAOImpl.java:62)
+	at services.UserService.saveUser(UserService.java:56)
+	at Main.main(Main.java:17)
+2025-12-20 23:55:48 [main] INFO  services.UserService - Пользователь User{id=0, name='Igor', email='igor@mail.ru', age=26} успешно создан.
+
+2025-12-20 23:58:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-20 23:58:47 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-20 23:58:47 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:58:48 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-20 23:58:48 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:58:48 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:00:27 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:00:27 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:00:27 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:00:27 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:00:28 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:00:28 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:00:49 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:00:50 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:00:50 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:00:50 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:00:51 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:00:51 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:00:51 [main] INFO  dao.UserDAOImpl - Пользователь с email: masha@mail.ru успешно сохранен.
+
+2025-12-21 00:00:51 [main] INFO  services.UserService - Пользователь User{id=8, name='Masha', email='masha@mail.ru', age=23} успешно создан.
+
+2025-12-21 00:00:51 [main] INFO  dao.UserDAOImpl - Пользователь с email: igor@mail.ru успешно сохранен.
+
+2025-12-21 00:00:51 [main] INFO  services.UserService - Пользователь User{id=9, name='Igor', email='igor@mail.ru', age=26} успешно создан.
+
+2025-12-21 00:00:51 [main] INFO  dao.UserDAOImpl - Пользователь с email: valera@mail.ru успешно сохранен.
+
+2025-12-21 00:00:51 [main] INFO  services.UserService - Пользователь User{id=10, name='Valera', email='valera@mail.ru', age=27} успешно создан.
+
+2025-12-21 00:01:45 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:01:45 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:01:46 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:01:46 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:01:46 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:01:46 [main] WARN  org.hibernate.orm.jdbc.warn - HHH000247: ErrorCode: 0, SQLState: 00000
+2025-12-21 00:01:46 [main] WARN  org.hibernate.orm.jdbc.warn - constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2025-12-21 00:01:46 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:01:47 [main] INFO  dao.UserDAOImpl - Пользователь с email: masha@mail.ru успешно сохранен.
+
+2025-12-21 00:01:47 [main] INFO  services.UserService - Пользователь User{id=1, name='Masha', email='masha@mail.ru', age=23} успешно создан.
+
+2025-12-21 00:01:47 [main] INFO  dao.UserDAOImpl - Пользователь с email: igor@mail.ru успешно сохранен.
+
+2025-12-21 00:01:47 [main] INFO  services.UserService - Пользователь User{id=2, name='Igor', email='igor@mail.ru', age=26} успешно создан.
+
+2025-12-21 00:01:47 [main] INFO  dao.UserDAOImpl - Пользователь с email: valera@mail.ru успешно сохранен.
+
+2025-12-21 00:01:47 [main] INFO  services.UserService - Пользователь User{id=3, name='Valera', email='valera@mail.ru', age=27} успешно создан.
+
+2025-12-21 00:05:01 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:05:01 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:05:01 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:05:01 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:05:02 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:05:02 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:05:02 [main] INFO  dao.UserDAOImpl - Пользователь с ID: 3 успешно удален. 
+
+2025-12-21 00:05:02 [main] INFO  services.UserService - Пользователь с ID: 3 успешно удален.
+
+2025-12-21 00:07:18 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:07:18 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:07:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:07:18 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:07:19 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:07:19 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:08:58 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:08:58 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:08:59 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:08:59 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:08:59 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:08:59 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:13:10 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:13:11 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:13:11 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:13:11 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:13:11 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:13:12 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:13:12 [main] ERROR services.UserService - Ошибка обновления пользователя.
+
+java.lang.IllegalArgumentException: Пользователь не существует.
+
+	at services.UserService.updateUser(UserService.java:69)
+	at Main.main(Main.java:18)
+2025-12-21 00:16:00 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:16:00 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:16:00 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:16:00 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:16:01 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:16:01 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:16:01 [main] ERROR services.UserService - Ошибка обновления пользователя.
+
+java.lang.IllegalArgumentException: Пользователь не существует.
+
+	at services.UserService.updateUser(UserService.java:69)
+	at Main.main(Main.java:18)
+2025-12-21 00:48:31 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:48:32 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:48:32 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:48:32 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:48:33 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:48:33 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:48:33 [main] INFO  services.UserService - Общее количество пользователей успешно получено.
+
+2025-12-21 00:48:33 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 00:50:20 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:50:20 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:50:21 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:50:21 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:50:22 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:50:22 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:50:22 [main] ERROR services.UserService - Ошибка обновления пользователя.
+
+java.lang.IllegalArgumentException: Пользователь не существует.
+
+	at services.UserService.updateUser(UserService.java:73)
+	at Main.main(Main.java:18)
+2025-12-21 00:50:22 [main] INFO  services.UserService - Общее количество пользователей успешно получено.
+
+2025-12-21 00:50:22 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 00:52:51 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 00:52:51 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 00:52:51 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 00:52:51 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 00:52:52 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 00:52:52 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 00:52:52 [main] ERROR services.UserService - Ошибка обновления пользователя.
+
+java.lang.IllegalArgumentException: Пользователь не существует.
+
+	at services.UserService.updateUser(UserService.java:73)
+	at Main.main(Main.java:18)
+2025-12-21 00:52:52 [main] INFO  services.UserService - Общее количество пользователей успешно получено.
+
+2025-12-21 00:52:52 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 01:00:00 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 01:00:01 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 01:00:01 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 01:00:01 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 01:00:02 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 01:00:02 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создан.
+
+2025-12-21 01:00:02 [main] ERROR services.UserService - Ошибка обновления пользователя.
+
+java.lang.IllegalArgumentException: Пользователь не существует.
+
+	at services.UserService.updateUser(UserService.java:73)
+	at Main.main(Main.java:21)
+2025-12-21 03:50:08 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 03:50:08 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 03:50:09 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 03:50:09 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 03:50:10 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 03:50:10 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 03:50:10 [main] INFO  services.UserService - Пользователь с id 2 успешно получен.
+
+2025-12-21 03:50:10 [main] INFO  dao.UserDAOImpl - Пользователь с ID: 2 успешно обновлен. 
+
+2025-12-21 03:50:10 [main] INFO  services.UserService - Пользователь User{id=2, name='Igor', email='igor@mail.ru', age=100} успешно обновлен.
+
+2025-12-21 03:53:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 03:53:47 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 03:53:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 03:53:48 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 03:53:49 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 03:53:49 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 03:53:49 [main] INFO  services.UserService - Пользователь с id 3 успешно получен.
+
+2025-12-21 04:09:28 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 04:09:29 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 04:09:29 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-21 04:09:29 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 04:09:30 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 04:09:30 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 04:10:17 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 04:10:17 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 04:10:18 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 04:10:19 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 04:10:19 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 04:32:30 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 04:32:31 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 04:32:31 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 04:32:32 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 04:32:32 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 04:32:32 [main] INFO  services.UserService - Пользователь с id 3 не найден.
+
+2025-12-21 04:33:23 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 04:33:24 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 04:33:24 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 04:33:25 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 04:33:25 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 04:33:25 [main] INFO  services.UserService - Пользователь с id 2 успешно получен.
+
+2025-12-21 04:33:25 [main] INFO  dao.UserDAOImpl - Пользователь с ID: 2 успешно обновлен. 
+
+2025-12-21 04:33:25 [main] INFO  services.UserService - Пользователь User{id=2, name='Igor', email='igor@mail.ru', age=26} успешно обновлен.
+
