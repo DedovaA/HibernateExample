@@ -5,7 +5,6 @@ import dao.UserDAOImpl;
 import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -77,7 +76,7 @@ public class UserService {
     }
 
     public void updateUser(User user) {
-        Optional<User> existedUser = Optional.empty();
+        Optional<User> existedUser;
         try {
             existedUser = userDAO.findById(user.getId());
             //если данный пользователь не существует

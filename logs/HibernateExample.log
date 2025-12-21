@@ -33,7 +33,7 @@ org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to lo
 	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
 	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:10)
+	at App.main(App.java:10)
 Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
 	at java.base/java.lang.Class.forName0(Native Method)
 	at java.base/java.lang.Class.forName(Class.java:488)
@@ -45,7 +45,7 @@ Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/mode
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:10)
+	at App.main(App.java:10)
 2025-12-20 23:32:48 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
 2025-12-20 23:32:48 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2025-12-20 23:32:49 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -81,7 +81,7 @@ org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to lo
 	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
 	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:10)
+	at App.main(App.java:10)
 Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
 	at java.base/java.lang.Class.forName0(Native Method)
 	at java.base/java.lang.Class.forName(Class.java:488)
@@ -93,13 +93,13 @@ Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/mode
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:10)
+	at App.main(App.java:10)
 2025-12-20 23:32:49 [main] ERROR dao.UserDAOImpl - Ошибка.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findAll(UserDAOImpl.java:44)
 	at services.UserService.findAllUsers(UserService.java:43)
-	at Main.main(Main.java:11)
+	at App.main(App.java:11)
 2025-12-20 23:37:03 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
 2025-12-20 23:37:03 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2025-12-20 23:37:04 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -135,7 +135,7 @@ org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to lo
 	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
 	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:8)
+	at App.main(App.java:8)
 Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
 	at java.base/java.lang.Class.forName0(Native Method)
 	at java.base/java.lang.Class.forName(Class.java:488)
@@ -147,25 +147,25 @@ Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/mode
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.count(UserDAOImpl.java:108)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:8)
+	at App.main(App.java:8)
 2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findAll(UserDAOImpl.java:44)
 	at services.UserService.getAllUsers(UserService.java:43)
-	at Main.main(Main.java:9)
+	at App.main(App.java:9)
 2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: masha@mail.ru не найден .
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:31)
 	at services.UserService.saveUser(UserService.java:52)
-	at Main.main(Main.java:15)
+	at App.main(App.java:15)
 2025-12-20 23:37:04 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.save(UserDAOImpl.java:55)
 	at services.UserService.saveUser(UserService.java:56)
-	at Main.main(Main.java:15)
+	at App.main(App.java:15)
 2025-12-20 23:37:04 [main] INFO  services.UserService - Пользователь User{id=0, name='Masha', email='masha@mail.ru', age=23} успешно создан.
 
 2025-12-20 23:54:54 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
@@ -203,7 +203,7 @@ org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to lo
 	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
 	at dao.UserDAOImpl.count(UserDAOImpl.java:121)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:8)
+	at App.main(App.java:8)
 Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
 	at java.base/java.lang.Class.forName0(Native Method)
 	at java.base/java.lang.Class.forName(Class.java:488)
@@ -215,13 +215,13 @@ Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/mode
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.count(UserDAOImpl.java:121)
 	at services.UserService.getUsersCount(UserService.java:103)
-	at Main.main(Main.java:8)
+	at App.main(App.java:8)
 2025-12-20 23:54:54 [main] ERROR dao.UserDAOImpl - Ошибка.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findAll(UserDAOImpl.java:49)
 	at services.UserService.getAllUsers(UserService.java:43)
-	at Main.main(Main.java:9)
+	at App.main(App.java:9)
 2025-12-20 23:55:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
 2025-12-20 23:55:48 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2025-12-20 23:55:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -257,7 +257,7 @@ org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to lo
 	at utils.HibernateSessionFactoryUtil.<clinit>(HibernateSessionFactoryUtil.java:25)
 	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
 	at services.UserService.saveUser(UserService.java:52)
-	at Main.main(Main.java:15)
+	at App.main(App.java:15)
 Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/models/User
 	at java.base/java.lang.Class.forName0(Native Method)
 	at java.base/java.lang.Class.forName(Class.java:488)
@@ -269,13 +269,13 @@ Caused by: java.lang.ClassNotFoundException: HibernateExample/src/main/java/mode
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
 	at services.UserService.saveUser(UserService.java:52)
-	at Main.main(Main.java:15)
+	at App.main(App.java:15)
 2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.save(UserDAOImpl.java:62)
 	at services.UserService.saveUser(UserService.java:56)
-	at Main.main(Main.java:15)
+	at App.main(App.java:15)
 2025-12-20 23:55:48 [main] INFO  services.UserService - Пользователь User{id=0, name='Masha', email='masha@mail.ru', age=23} успешно создан.
 
 2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: igor@mail.ru не найден .
@@ -283,13 +283,13 @@ java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.open
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
 	at services.UserService.saveUser(UserService.java:52)
-	at Main.main(Main.java:16)
+	at App.main(App.java:16)
 2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.save(UserDAOImpl.java:62)
 	at services.UserService.saveUser(UserService.java:56)
-	at Main.main(Main.java:16)
+	at App.main(App.java:16)
 2025-12-20 23:55:48 [main] INFO  services.UserService - Пользователь User{id=0, name='Igor', email='igor@mail.ru', age=26} успешно создан.
 
 2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка поиска пользователя c email: igor@mail.ru не найден .
@@ -297,13 +297,13 @@ java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.open
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.findByEmail(UserDAOImpl.java:34)
 	at services.UserService.saveUser(UserService.java:52)
-	at Main.main(Main.java:17)
+	at App.main(App.java:17)
 2025-12-20 23:55:48 [main] ERROR dao.UserDAOImpl - Ошибка сохранения пользователя.
 
 java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because the return value of "utils.HibernateSessionFactoryUtil.getSessionFactory()" is null
 	at dao.UserDAOImpl.save(UserDAOImpl.java:62)
 	at services.UserService.saveUser(UserService.java:56)
-	at Main.main(Main.java:17)
+	at App.main(App.java:17)
 2025-12-20 23:55:48 [main] INFO  services.UserService - Пользователь User{id=0, name='Igor', email='igor@mail.ru', age=26} успешно создан.
 
 2025-12-20 23:58:47 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
@@ -485,7 +485,7 @@ java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.open
 java.lang.IllegalArgumentException: Пользователь не существует.
 
 	at services.UserService.updateUser(UserService.java:69)
-	at Main.main(Main.java:18)
+	at App.main(App.java:18)
 2025-12-21 00:16:00 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
 2025-12-21 00:16:00 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2025-12-21 00:16:00 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -509,7 +509,7 @@ java.lang.IllegalArgumentException: Пользователь не существ
 java.lang.IllegalArgumentException: Пользователь не существует.
 
 	at services.UserService.updateUser(UserService.java:69)
-	at Main.main(Main.java:18)
+	at App.main(App.java:18)
 2025-12-21 00:48:31 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
 2025-12-21 00:48:32 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2025-12-21 00:48:32 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -555,7 +555,7 @@ java.lang.IllegalArgumentException: Пользователь не существ
 java.lang.IllegalArgumentException: Пользователь не существует.
 
 	at services.UserService.updateUser(UserService.java:73)
-	at Main.main(Main.java:18)
+	at App.main(App.java:18)
 2025-12-21 00:50:22 [main] INFO  services.UserService - Общее количество пользователей успешно получено.
 
 2025-12-21 00:50:22 [main] INFO  services.UserService - Список всех пользователей успешно получен.
@@ -583,7 +583,7 @@ java.lang.IllegalArgumentException: Пользователь не существ
 java.lang.IllegalArgumentException: Пользователь не существует.
 
 	at services.UserService.updateUser(UserService.java:73)
-	at Main.main(Main.java:18)
+	at App.main(App.java:18)
 2025-12-21 00:52:52 [main] INFO  services.UserService - Общее количество пользователей успешно получено.
 
 2025-12-21 00:52:52 [main] INFO  services.UserService - Список всех пользователей успешно получен.
@@ -611,7 +611,7 @@ java.lang.IllegalArgumentException: Пользователь не существ
 java.lang.IllegalArgumentException: Пользователь не существует.
 
 	at services.UserService.updateUser(UserService.java:73)
-	at Main.main(Main.java:21)
+	at App.main(App.java:21)
 2025-12-21 03:50:08 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
 2025-12-21 03:50:08 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
 2025-12-21 03:50:09 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
@@ -732,4 +732,153 @@ java.lang.IllegalArgumentException: Пользователь не существ
 2025-12-21 04:33:25 [main] INFO  dao.UserDAOImpl - Пользователь с ID: 2 успешно обновлен. 
 
 2025-12-21 04:33:25 [main] INFO  services.UserService - Пользователь User{id=2, name='Igor', email='igor@mail.ru', age=26} успешно обновлен.
+
+2025-12-21 19:23:37 [main] INFO  App - Старт приложения HibernateExample...
+2025-12-21 19:23:41 [main] INFO  App - Приложение HibernateExample завершено.
+2025-12-21 19:23:45 [main] INFO  App - Старт приложения HibernateExample...
+2025-12-21 19:23:54 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 19:23:54 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 19:23:54 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 19:23:55 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 19:23:55 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 19:23:56 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:24:05 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:24:18 [main] INFO  services.UserService - Пользователь с id 1 успешно получен.
+
+2025-12-21 19:24:42 [main] INFO  services.UserService - Пользователь с email igor@mail.ru успешно получен.
+
+2025-12-21 19:25:23 [main] INFO  dao.UserDAOImpl - Пользователь с email: valera@mail.ru успешно сохранен.
+
+2025-12-21 19:25:23 [main] INFO  services.UserService - Пользователь User{id=4, name='Valera', email='valera@mail.ru', age=32} успешно создан.
+
+2025-12-21 19:25:34 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:25:38 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:26:28 [main] INFO  services.UserService - Пользователь с id 4 успешно получен.
+
+2025-12-21 19:26:45 [main] ERROR App - Ошибка: For input string: ""
+2025-12-21 19:26:45 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory закрыта.
+
+2025-12-21 19:26:45 [main] INFO  App - Приложение HibernateExample завершено.
+2025-12-21 19:31:12 [main] INFO  App - Старт приложения HibernateExample...
+2025-12-21 19:31:51 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 19:31:54 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 19:31:58 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 19:32:02 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 19:32:03 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 19:32:03 [main] INFO  services.UserService - Пользователь с id 4 успешно получен.
+
+2025-12-21 19:34:03 [main] ERROR App - Ошибка: For input string: ""
+2025-12-21 19:34:23 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory закрыта.
+
+2025-12-21 19:34:23 [main] INFO  App - Приложение HibernateExample завершено.
+2025-12-21 19:44:50 [main] INFO  App - Старт приложения HibernateExample...
+2025-12-21 19:44:55 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 19:44:55 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 19:44:56 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 19:44:56 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 19:44:56 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 19:44:56 [main] INFO  services.UserService - Пользователь с id 4 успешно получен.
+
+2025-12-21 19:45:45 [main] INFO  dao.UserDAOImpl - Пользователь с ID: 4 успешно обновлен. 
+
+2025-12-21 19:45:45 [main] INFO  services.UserService - Пользователь User{id=4, name='Valera', email='val@mail.ru', age=32} успешно обновлен.
+
+2025-12-21 19:46:22 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:46:33 [main] INFO  services.UserService - Пользователь с id 4 успешно получен.
+
+2025-12-21 19:46:33 [main] INFO  dao.UserDAOImpl - Пользователь с ID: 4 успешно удален. 
+
+2025-12-21 19:46:33 [main] INFO  services.UserService - Пользователь с ID: 4 успешно удален.
+
+2025-12-21 19:46:39 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:46:44 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:46:52 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory закрыта.
+
+2025-12-21 19:46:52 [main] INFO  App - Приложение HibernateExample завершено.
+2025-12-21 19:47:26 [main] INFO  App - Старт приложения HibernateExample...
+2025-12-21 19:47:33 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-21 19:47:34 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-12-21 19:47:34 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/MyDatabase]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: MyDatabase/public
+	Autocommit mode: false
+	Isolation level: READ_COMMITTED
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProvider
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-12-21 19:47:35 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21 19:47:35 [main] INFO  utils.HibernateSessionFactoryUtil - Hibernate SessionFactory успешно создана.
+
+2025-12-21 19:47:35 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:47:49 [main] INFO  services.UserService - Пользователь с id 1 не найден.
+
+2025-12-21 19:47:56 [main] INFO  services.UserService - Пользователь с id 4 не найден.
+
+2025-12-21 19:48:25 [main] INFO  dao.UserDAOImpl - Пользователь с email: masha@mail.ru успешно сохранен.
+
+2025-12-21 19:48:25 [main] INFO  services.UserService - Пользователь User{id=5, name='Masha', email='masha@mail.ru', age=23} успешно создан.
+
+2025-12-21 19:48:31 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:48:56 [main] INFO  dao.UserDAOImpl - Пользователь с email: igor@mail.ru успешно сохранен.
+
+2025-12-21 19:48:56 [main] INFO  services.UserService - Пользователь User{id=6, name='Igor', email='igor@mail.ru', age=26} успешно создан.
+
+2025-12-21 19:49:00 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:49:23 [main] INFO  dao.UserDAOImpl - Пользователь с email: valera@mail.ru успешно сохранен.
+
+2025-12-21 19:49:23 [main] INFO  services.UserService - Пользователь User{id=7, name='Valera', email='valera@mail.ru', age=27} успешно создан.
+
+2025-12-21 19:49:30 [main] INFO  services.UserService - Список всех пользователей успешно получен.
+
+2025-12-21 19:49:35 [main] INFO  services.UserService - Список всех пользователей успешно получен.
 
