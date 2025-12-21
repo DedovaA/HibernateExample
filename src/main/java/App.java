@@ -26,7 +26,7 @@ public class App {
         try{
             app.showMainMenu();
         } catch (Exception e) {
-            LOGGER.error("Ошибка: " + e.getMessage());
+            LOGGER.error("Ошибка: {}", e.getMessage());
         } finally {
             HibernateSessionFactoryUtil.shutdownSession();
             LOGGER.info("Приложение HibernateExample завершено.");
@@ -46,17 +46,17 @@ public class App {
             System.out.println("0 -  Выход.");
             System.out.println("=====================================================");
 
-            int userInput = Integer.parseInt(scanner.nextLine());
+            String userInput = scanner.nextLine().trim();
 
             switch (userInput) {
-                case 1 -> findUserById();
-                case 2 -> findUserByEmail();
-                case 3 -> createUser();
-                case 4 -> updateUser();
-                case 5 -> deleteUser();
-                case 6 -> showAllUsers();
-                case 7 -> getUsersCount();
-                case 0 -> {
+                case "1" -> findUserById();
+                case "2" -> findUserByEmail();
+                case "3" -> createUser();
+                case "4" -> updateUser();
+                case "5" -> deleteUser();
+                case "6" -> showAllUsers();
+                case "7" -> getUsersCount();
+                case "0" -> {
                     System.out.println("Завершение работы приложения.");
                     return;
                 }
@@ -74,7 +74,7 @@ public class App {
 
         try {
             Optional<User> userOptional = userService.getUserById(id);
-            if (!userOptional.isPresent()) {
+            if (userOptional.isEmpty()) {
                 System.out.println("Пользователь с " + id + " не найден.");
                 return;
             }
@@ -94,7 +94,7 @@ public class App {
 
         try {
             Optional<User> userOptional = userService.getUserByEmail(email);
-            if (!userOptional.isPresent()) {
+            if (userOptional.isEmpty()) {
                 System.out.println("Пользователь с " + email + " не найден.");
                 return;
             }
@@ -171,7 +171,7 @@ public class App {
         System.out.println("Введите ID пользователя для удаления: ");
         Long id =  Long.parseLong(scanner.nextLine());
         Optional<User> userOptional = userService.getUserById(id);
-        if (!userOptional.isPresent()) {
+        if (userOptional.isEmpty()) {
             System.out.println("Пользователь с " + id + " не найден.");
             return;
         }
