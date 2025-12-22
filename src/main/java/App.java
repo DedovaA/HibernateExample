@@ -3,7 +3,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import services.UserService;
 import utils.HibernateSessionFactoryUtil;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -118,7 +117,6 @@ public class App {
         try {
             User user = new User(name, email, age);
             userService.saveUser(user);
-            System.out.println("Пользователь успешно создан." + user);
         } catch (Exception e) {
             System.out.println("Ошибка создания пользователя.\n" + e.getMessage());
         }
@@ -159,7 +157,6 @@ public class App {
 
         try {
             userService.updateUser(user);
-            System.out.println("данный пользователя успешно обновлены.");
         } catch (Exception e) {
             System.out.println("Ошибка обновления пользователя.\n" + e.getMessage());
         }
@@ -170,15 +167,8 @@ public class App {
 
         System.out.println("Введите ID пользователя для удаления: ");
         Long id =  Long.parseLong(scanner.nextLine());
-        Optional<User> userOptional = userService.getUserById(id);
-        if (userOptional.isEmpty()) {
-            System.out.println("Пользователь с " + id + " не найден.");
-            return;
-        }
-        User user = userOptional.get();
         try {
             userService.deleteUser(id);
-            System.out.println("Пользователь " + user + " успешно удален.");
         } catch (Exception e) {
             System.out.println("Ошибка удаления пользователя.\n" + e.getMessage());
         }

@@ -27,7 +27,7 @@ public class UserService {
                 LOGGER.info("Пользователь с id {} не найден.\n", id);
             }
         } catch (Exception e) {
-            LOGGER.error("Ошибка получения пользователя с ID: {}.\n", id, e);
+            LOGGER.error("Ошибка получения пользователя с ID: {}.", id, e);
         }
         return user;
     }
@@ -42,7 +42,7 @@ public class UserService {
                 LOGGER.info("Пользователь с email {} не найден.\n", email);
             }
         } catch (Exception e) {
-            LOGGER.error("Ошибка получения пользователя с email: {}.\n", email, e);
+            LOGGER.error("Ошибка получения пользователя с email: {}.", email, e);
         }
         return user;
     }
@@ -57,7 +57,7 @@ public class UserService {
                 LOGGER.info("Список пользователей пуст.\n");
             }
         } catch (Exception e) {
-            LOGGER.error("Ошибка получения списка пользователей.\n", e);
+            LOGGER.error("Ошибка получения списка пользователей.", e);
         }
         return users;
     }
@@ -67,25 +67,23 @@ public class UserService {
             userDAO.save(user);
             LOGGER.info("Пользователь {} успешно создан.\n", user);
         } catch (Exception e) {
-            LOGGER.error("Ошибка создания пользователя.\n", e);
+            LOGGER.error("Ошибка создания пользователя.", e);
         }
     }
 
     public void updateUser(User user) {
         try {
             userDAO.update(user);
-            LOGGER.info("Пользователь {} успешно обновлен.\n", user);
         } catch (Exception e) {
-            LOGGER.error("Ошибка обновления пользователя.\n", e);
+            LOGGER.error("Ошибка обновления пользователя.", e);
         }
     }
 
     public void deleteUser(Long id) {
         try {
             userDAO.delete(id);
-            LOGGER.info("Пользователь с ID: {} успешно удален.\n", id);
         } catch (Exception e) {
-            LOGGER.error("Ошибка удаления пользователя.\n", e);
+            LOGGER.error("Ошибка удаления пользователя.", e);
         }
     }
 
@@ -93,9 +91,8 @@ public class UserService {
         Long usersCount = null;
         try {
             usersCount = userDAO.count();
-            LOGGER.info("Общее количество пользователей успешно получено.\n");
         } catch (Exception e) {
-            LOGGER.error("Ошибка получения общего количества пользователей.\n", e);
+            LOGGER.error("Ошибка получения общего количества пользователей.", e);
         }
         return usersCount;
     }
