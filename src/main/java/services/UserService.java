@@ -64,10 +64,6 @@ public class UserService {
 
     public void saveUser(User user) {
         try {
-            Optional<User> existedUser = userDAO.findByEmail(user.getEmail());
-            if (existedUser.isPresent()) {
-                throw new IllegalArgumentException("Пользователь с таким email уже существует." + user.getEmail());
-            }
             userDAO.save(user);
             LOGGER.info("Пользователь {} успешно создан.\n", user);
         } catch (Exception e) {
