@@ -76,24 +76,10 @@ public class UserService {
     }
 
     public void updateUser(User user) {
-        Optional<User> existedUser;
         try {
-            existedUser = userDAO.findById(user.getId());
-            //если данный пользователь не существует
-            if (existedUser.isEmpty()) {
-                throw new IllegalArgumentException("Пользователь не существует.\n");
-            }
-            String existedEmail = existedUser.get().getEmail();
-            //если обновился имейл, проверяем что он уникален
-            if (!existedEmail.equals(user.getEmail())) {
-                Optional<User> userWithCurrentEmail = userDAO.findByEmail(user.getEmail());
-                if (userWithCurrentEmail.isPresent()) {
-                    throw new IllegalArgumentException("Email " + user.getEmail() + " не уникален.\n");
-                }
-            }
             userDAO.update(user);
             LOGGER.info("Пользователь {} успешно обновлен.\n", user);
-        } catch (Exception e) { //доделать
+        } catch (Exception e) {
             LOGGER.error("Ошибка обновления пользователя.\n", e);
         }
     }
