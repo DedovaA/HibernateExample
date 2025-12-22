@@ -25,10 +25,9 @@ public class App {
         try{
             app.showMainMenu();
         } catch (Exception e) {
-            LOGGER.error("Ошибка: {}", e.getMessage());
+            LOGGER.error("Ошибка запуска приложения {}", e.getMessage());
         } finally {
             HibernateSessionFactoryUtil.shutdownSession();
-            LOGGER.info("Приложение HibernateExample завершено.");
         }
     }
 
@@ -57,6 +56,7 @@ public class App {
                 case "7" -> getUsersCount();
                 case "0" -> {
                     System.out.println("Завершение работы приложения.");
+                    LOGGER.info("Приложение HibernateExample завершено.");
                     return;
                 }
                 default -> System.out.println("Неверный ввод, выберите действие из списка.");
