@@ -80,7 +80,7 @@ public class UserService {
         try {
             existedUser = userDAO.findById(user.getId());
             //если данный пользователь не существует
-            if (!existedUser.isPresent()) {
+            if (existedUser.isEmpty()) {
                 throw new IllegalArgumentException("Пользователь не существует.\n");
             }
             String existedEmail = existedUser.get().getEmail();
@@ -99,12 +99,7 @@ public class UserService {
     }
 
     public void deleteUser(Long id) {
-        Optional<User> existedUser = Optional.empty();
         try {
-            existedUser = userDAO.findById(id);
-            if (!existedUser.isPresent()) {
-                throw new IllegalArgumentException("Пользователь не существует.\n");
-            }
             userDAO.delete(id);
             LOGGER.info("Пользователь с ID: {} успешно удален.\n", id);
         } catch (Exception e) {
