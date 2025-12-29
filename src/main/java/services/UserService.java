@@ -17,6 +17,11 @@ public class UserService {
         this.userDAO = new UserDAOImpl();
     }
 
+    //конструктор для mock-тестов и DI
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
     public Optional<User> getUserById(Long id) {
         Optional<User> user = Optional.empty();
         try {
@@ -74,6 +79,7 @@ public class UserService {
     public void updateUser(User user) {
         try {
             userDAO.update(user);
+            LOGGER.info("Пользователь {} успешно обновлен.\n", user);
         } catch (Exception e) {
             LOGGER.error("Ошибка обновления пользователя.", e);
         }
@@ -82,6 +88,7 @@ public class UserService {
     public void deleteUser(Long id) {
         try {
             userDAO.delete(id);
+            LOGGER.info("Пользователь с id {} успешно удален.\n", id);
         } catch (Exception e) {
             LOGGER.error("Ошибка удаления пользователя.", e);
         }
@@ -91,6 +98,7 @@ public class UserService {
         Long usersCount = null;
         try {
             usersCount = userDAO.count();
+            LOGGER.info("В базе данных {} пользователей.", usersCount);
         } catch (Exception e) {
             LOGGER.error("Ошибка получения общего количества пользователей.", e);
         }
