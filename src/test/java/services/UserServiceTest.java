@@ -53,7 +53,7 @@ class UserServiceTest {
         verify(userDAO, times(1)).findById(id);
     }
 
-    @DisplayName("Должен возвращать empty при запросе пользователя из БД.")
+    @DisplayName("Должен возвращать empty, если пользователь по id не найден.")
     @Test
     void getUserById_NotFound() {
         when(userDAO.findById(id)).thenReturn(Optional.empty());
@@ -64,7 +64,7 @@ class UserServiceTest {
         verify(userDAO, times(1)).findById(id);
     }
 
-    @DisplayName("Должен бросать исключение при попытке получения пользователя из БД.")
+    @DisplayName("Должен бросать исключение при попытке получения пользователя по id из БД.")
     @Test
     void getUserById_HandleException() {
         when(userDAO.findById(id)).thenThrow(new RuntimeException("Ошибка БД."));
@@ -87,7 +87,7 @@ class UserServiceTest {
         verify(userDAO, times(1)).findByEmail(email);
     }
 
-    @DisplayName("Должен возвращать empty при запросе пользователя по email из БД.")
+    @DisplayName("Должен возвращать empty, если пользователь с таким email не найден в БД.")
     @Test
     void getUserByEmail_NotFound() {
         when(userDAO.findByEmail(email)).thenReturn(Optional.empty());
@@ -125,12 +125,40 @@ class UserServiceTest {
         verify(userDAO, times(1)).findAll();
     }
 
+    @DisplayName("Должен возвращать null, если пользователи в БД отсутствуют.")
+    @Test
+    void getAllUsers_EmptyList() {
+        when(userDAO.findAll()).thenReturn(null);
 
+        List<User> result = userService.getAllUsers();
+
+        assertNull(result);
+        verify(userDAO, times(1)).findAll();
+    }
+
+    @DisplayName("Должен бросать исключение при попытке получения пользователей из БД.")
+    @Test
+    void getAllUsers_HandleException() {
+        when(userDAO.findAll()).thenThrow(new RuntimeException("Ошибка БД."));
+
+        List<User> result = userService.getAllUsers();
+        assertNull(result);
+        verify(userDAO, times(1)).findAll();
+    }
 
     @DisplayName("Должен успешно сохранять пользователя в БД.")
     @Test
     void testSaveUser_Success() {
         userService.saveUser(user);
+
+        verify(userDAO, times(1)).save(user);
+    }
+
+    @DisplayName("Должен бросать исключение при попытке сохранения пользователя в БД.")
+    @Test
+    void testSaveUser_HandleException() {
+        doThrow(new RuntimeException("Ошибка БД.")).when(userDAO).save(any(User.class));
+        assertDoesNotThrow(() -> userService.saveUser(user));
 
         verify(userDAO, times(1)).save(user);
     }
@@ -160,6 +188,15 @@ class UserServiceTest {
         verify(userDAO, times(1)).delete(id);
     }
 
+    @DisplayName("Должен бросать исключение при попытке удаления пользователя из БД.")
+    @Test
+    void deleteUser_HandleException() {
+        doThrow(new RuntimeException("Ошибка БД.")).when(userDAO).delete(anyLong());
+        assertDoesNotThrow(() -> userService.deleteUser(id));
+
+        verify(userDAO, times(1)).delete(id);
+    }
+
     @DisplayName("Должен успешно возвращать количество всех пользователей из БД.")
     @Test
     void getUsersCount_Success() {
@@ -169,6 +206,16 @@ class UserServiceTest {
         Long result = userService.getUsersCount();
 
         assertEquals(4L, result);
+        verify(userDAO, times(1)).count();
+    }
+
+    @DisplayName("Должен бросать исключение при попытке получения количества всех пользователей в БД.")
+    @Test
+    void getUsersCount_HandleException() {
+        when(userDAO.count()).thenThrow(new RuntimeException("Ошибка БД."));
+
+        Long result = userService.getUsersCount();
+        assertNull(result);
         verify(userDAO, times(1)).count();
     }
 }
