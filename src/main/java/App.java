@@ -1,14 +1,13 @@
+import lombok.extern.slf4j.Slf4j;
 import models.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import services.UserService;
 import utils.HibernateSessionFactoryUtil;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+@Slf4j
 public class App {
-    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
     private final UserService userService;
     private final Scanner scanner;
 
@@ -18,14 +17,14 @@ public class App {
     }
 
     public static void main(String[] args) {
-        LOGGER.info("Старт приложения HibernateExample...");
+        log.info("Старт приложения HibernateExample...");
 
         App app = new App();
 
         try{
             app.showMainMenu();
         } catch (Exception e) {
-            LOGGER.error("Ошибка запуска приложения {}", e.getMessage());
+            log.error("Ошибка запуска приложения {}", e.getMessage());
         } finally {
             HibernateSessionFactoryUtil.shutdownSession();
         }
@@ -56,7 +55,7 @@ public class App {
                 case "7" -> getUsersCount();
                 case "0" -> {
                     System.out.println("Завершение работы приложения.");
-                    LOGGER.info("Приложение HibernateExample завершено.");
+                    log.info("Приложение HibernateExample завершено.");
                     return;
                 }
                 default -> System.out.println("Неверный ввод, выберите действие из списка.");

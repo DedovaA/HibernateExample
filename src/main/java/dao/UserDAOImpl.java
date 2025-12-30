@@ -2,6 +2,7 @@ package dao;
 
 import models.User;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.hibernate.query.SelectionQuery;
@@ -13,11 +14,20 @@ import java.util.Optional;
 
 public class UserDAOImpl implements UserDAO{
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDAOImpl.class);
+    private final SessionFactory sessionFactory;
+
+    public UserDAOImpl() {
+        this.sessionFactory = HibernateSessionFactoryUtil.getSessionFactory();
+    }
+
+    public UserDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public Optional<User> findById(Long id) {
         User user = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             user = session.find(User.class, id);
         } catch (Exception e) {
             LOGGER.error("Ошибка поиска пользователя по ID: {} .\n", id, e);
@@ -28,7 +38,7 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public Optional<User> findByEmail(String email) {
         User user = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             Query<User> query = session.createQuery("FROM User u WHERE u.email = :email", User.class);
             query.setParameter("email", email);
             user = query.uniqueResult();
@@ -41,7 +51,7 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public List<User> findAll() {
         List<User> users = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             users = session.createQuery("FROM User", User.class).getResultList();
         } catch (Exception e) {
             LOGGER.error("Ошибка.\n", e);
@@ -52,7 +62,7 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void save(User user) {
         Transaction transaction = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             session.persist(user);
             transaction.commit();
@@ -68,7 +78,7 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void update(User user) {
         Transaction transaction = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             session.merge(user);
             transaction.commit();
@@ -84,7 +94,7 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void delete(Long id) {
         Transaction transaction = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             User user = session.find(User.class, id);
             if (user != null) {
@@ -106,7 +116,7 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public Long count() {
         Long count = null;
-        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = sessionFactory.openSession()) {
             SelectionQuery<Long> query = session.createSelectionQuery("SELECT COUNT(u) FROM User u", Long.class);
             count = query.getSingleResult();
         } catch (Exception e) {
