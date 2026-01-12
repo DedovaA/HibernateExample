@@ -10,7 +10,7 @@
         <property name="hibernate.show_sql">true</property> <!-- Показывает SQL-запросы в консоли -->
         <property name="hibernate.format_sql">true</property> <!-- Форматирует SQL-запросы -->
         <property name="hibernate.hbm2ddl.auto">update</property> <!-- Автоматическое создание/обновление таблиц при запуске. Обновляет схему БД (update, create, create-drop, validate) -->
-        <mapping class="HibernateExample/src/main/java/models/User"/>
+        <mapping class="models.User"/>
 
     </session-factory>
 </hibernate-configuration>
